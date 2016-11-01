@@ -81,8 +81,12 @@ public class SeleniumFilterTests {
         driver.findElement(By.id("edit-filter-button--9")).click();
 
 
-        Thread.sleep(10000);
-        assertEquals("http://ellenwhite.org/library?f[0]=bundle%3Afiles&f[1]=sm_field_files_primary_media%3Aimage", driver.getCurrentUrl());
+        //Thread.sleep(10000);
+        //assertEquals("http://ellenwhite.org/library?f[0]=bundle%3Afiles&f[1]=sm_field_files_primary_media%3Aimage", driver.getCurrentUrl());
+        driver.findElement(By.linkText("1. David Laceys Mother- b. c. 1786")).click();
+
+        WebElement imgVwr = driver.findElement(By.cssSelector("button[title=\"Zoom in\"]"));
+        Assert.assertEquals(true, imgVwr.isDisplayed());
     }
 
     @Test
